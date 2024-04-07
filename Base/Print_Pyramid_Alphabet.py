@@ -1,4 +1,3 @@
-
 list = "abcdefghijklmnopqrstuvwxyz" #Alphabet list
 
 size_list=len(list)-1 #Take the size of the alphabet list
