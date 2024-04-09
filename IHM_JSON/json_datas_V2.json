@@ -1,27 +1,27 @@
 [
     {
-        "RIOT_NAME":"OpperFoxEat",
-        "RIOT_HASHTAG":"EUW",
-        "RIOT_ID":1245374
+        "EMAIL"="mathias.buble@gmail.fr",
+        "PHONE"="+9065804526",
+        "ID"=1
     },
     {
-        "RIOT_NAME":"Opper",
-        "RIOT_HASHTAG":"E",
-        "RIOT_ID":454
+        "EMAIL"="milior.gaming@outlook.com",
+        "PHONE"="0990901254",
+        "ID"=2
     },
     {
-        "RIOT_NAME":"Fox",
-        "RIOT_HASHTAG":"U",
-        "RIOT_ID":12374
+        "EMAIL"="figaro.rockelant@hotmail.com",
+        "PHONE"="+33756489754",
+        "ID"=3
     },
     {
-        "RIOT_NAME":"OFE",
-        "RIOT_HASHTAG":"UWE",
-        "RIOT_ID":111153
+        "EMAIL"="tripofficial@gmail.com",
+        "PHONE"="0456724318",
+        "ID"=4
     },
     {
-        "RIOT_NAME":"opperfoxeat",
-        "RIOT_HASHTAG":"6125",
-        "RIOT_ID":885962103
+        "EMAIL"="clock_time@hotmail.fr",
+        "PHONE"="0320568789",
+        "ID"=5
     }
 ]
