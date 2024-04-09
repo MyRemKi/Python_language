@@ -1,27 +1,27 @@
 [
     {
-        "EMAIL"="mathias.buble@gmail.fr",
-        "PHONE"="+9065804526",
-        "ID"=1
+        "EMAIL":"mathias.buble@gmail.fr",
+        "PHONE":"+9065804526",
+        "ID":1
     },
     {
-        "EMAIL"="milior.gaming@outlook.com",
-        "PHONE"="0990901254",
-        "ID"=2
+        "EMAIL":"milior.gaming@outlook.com",
+        "PHONE":"0990901254",
+        "ID":2
     },
     {
-        "EMAIL"="figaro.rockelant@hotmail.com",
-        "PHONE"="+33756489754",
-        "ID"=3
+        "EMAIL":"figaro.rockelant@hotmail.com",
+        "PHONE":"+33756489754",
+        "ID":3
     },
     {
-        "EMAIL"="tripofficial@gmail.com",
-        "PHONE"="0456724318",
-        "ID"=4
+        "EMAIL":"tripofficial@gmail.com",
+        "PHONE":"0456724318",
+        "ID":4
     },
     {
-        "EMAIL"="clock_time@hotmail.fr",
-        "PHONE"="0320568789",
-        "ID"=5
+        "EMAIL":"clock_time@hotmail.fr",
+        "PHONE":"0320568789",
+        "ID":5
     }
 ]
