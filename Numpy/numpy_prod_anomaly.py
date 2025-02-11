@@ -1,6 +1,5 @@
 import numpy as np
 import random
-import time as ts
 
 def init_production():
     prod = np.random.randint(0,5,size=(3,3), dtype='int8')
