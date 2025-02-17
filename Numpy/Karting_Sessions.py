@@ -13,6 +13,9 @@ class Karting_Session:
     
     def Return_Data_Session(self):
         return self.list
+
+    def Return_Data_BestTime(self):
+        return self.besttime
     
     def __str__(self):
         return "Session : \n" + str(self.list) + "\n Best Time made : " + str(self.besttime) + "s"
