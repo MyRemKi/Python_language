@@ -1,5 +1,4 @@
 import numpy as np
-import random as rd
 
 class Karting_Session:
     def __init__(self):
