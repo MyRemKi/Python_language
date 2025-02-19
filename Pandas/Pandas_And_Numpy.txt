@@ -1,0 +1,42 @@
+import pandas as pd
+import numpy as np
+import time as ts
+"""Datas = np.random.randint(-10,10, size=(3,10), dtype='int16')
+nbcolumns = int(Datas.size/3)
+columns_list = []
+for i in range (nbcolumns):
+    columns_list.append(str(i))
+
+table_1 = pd.DataFrame(Datas,columns=columns_list)
+print(table_1)"""
+
+class Map:
+    
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+        self.np = 0
+        self.pd = 0
+        
+    def Initialize(self,randx,randy) :
+        self.np = np.random.randint(randx,randy, size=(self.x,self.y))
+        columns_list = []
+        
+        for i in range (self.y):
+            columns_list.append(str(i))
+        
+        self.pd = pd.DataFrame(self.np,columns=columns_list)
+        
+    def Print(self):
+        print(self.pd)
+
+
+LoopCount=10
+while LoopCount!=0:
+    map_1 = Map(100,100)
+    map_1.Initialize(-100,100)
+    map_1.Print()
+    LoopCount=LoopCount-1
+    ts.sleep(1)
+
+        
