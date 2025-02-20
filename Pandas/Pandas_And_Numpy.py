@@ -1,14 +1,6 @@
 import pandas as pd
 import numpy as np
 import time as ts
-"""Datas = np.random.randint(-10,10, size=(3,10), dtype='int16')
-nbcolumns = int(Datas.size/3)
-columns_list = []
-for i in range (nbcolumns):
-    columns_list.append(str(i))
-
-table_1 = pd.DataFrame(Datas,columns=columns_list)
-print(table_1)"""
 
 class Map:
     
@@ -29,14 +21,23 @@ class Map:
         
     def Print(self):
         print(self.pd)
+    
+    def Return_Data_columns(self):
+        return self.pd.columns
+    
+    def Return_Data_Index_columns(self):
+        return self.pd.columns
 
-
+print('------------------------------------------')
+map_1 = Map(100,100)
+map_1.Initialize(-100,100)
+map_1.Print()
+print('------------------------------------------')
 LoopCount=10
 while LoopCount!=0:
-    map_1 = Map(100,100)
-    map_1.Initialize(-100,100)
-    map_1.Print()
-    LoopCount=LoopCount-1
-    ts.sleep(1)
-
-        
+    request = str(input("$:"))
+    if(request=="exit"):
+        LoopCount=0
+    if(request=="return -col"):
+        print(map_1.Return_Data_columns())
+    
