@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import time as ts
+import random as rand
 
 class Map:
     
@@ -10,7 +11,7 @@ class Map:
         self.np = 0
         self.pd = 0
         
-    def Initialize(self,randx,randy) :
+    def Generate_Table_From_Numpy(self,randx,randy) :
         self.np = np.random.randint(randx,randy, size=(self.x,self.y))
         columns_list = []
         
@@ -18,7 +19,17 @@ class Map:
             columns_list.append(str(i))
         
         self.pd = pd.DataFrame(self.np,columns=columns_list)
+    
+    def Generate_Table_From_Dict(self,orient):
+        random_dict = {rand.randint(1, 100): rand.randint(-100, 100) for _ in range(100)}
+        if(orient=="yes"):
+            self.pd = pd.DataFrame(random_dict,orient='index')
         
+         else:
+            self.pd = pd.DataFrame(random_dict)
+    
+    def Generate_Table_From_
+    
     def Print(self):
         print(self.pd)
     
@@ -31,6 +42,19 @@ class Map:
         
     def Return_Data_Index_columns(self):
         return self.pd.columns
+    
+    def Return_Table_Type(self):
+        return self.pd.dtypes
+    
+    def Define_Column_Data_Type(self,columnname,request):
+        if(request=="int"):
+            self.pd[columnname]= self.pd[columname].astype(int)
+        
+        if(request=="float"):
+            self.pd[columnname]= self.pd[columname].astype(float)
+        
+        if(request=="string"):
+            self.pd[columnname]= self.pd[columname].astype(str)
 
 print('------------------------------------------')
 map_1 = Map(100,100)
@@ -51,4 +75,3 @@ while Loop==True:
     if("return -data -row=" in request) :
         print(request[18:])
         print(Return_Data_Row(request[18:]))
-    
