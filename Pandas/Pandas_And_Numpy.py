@@ -27,8 +27,8 @@ class Map:
         else:
             self.pd = pd.DataFrame(random_dict)
     
-    def Generate_Table_From_File(self,name,chardelimiter=0):
-        if(chardelimiter!=0):
+    def Generate_Table_From_File(self,name,chardelimiter=''):
+        if(chardelimiter!=''):
             self.pd = pd.DataFrame.read_csv(name, delimiter=chardelimiter)
         else:
             self.pd = pd.DataFrame.read_csv(name)
@@ -62,7 +62,6 @@ class Map:
 
 print('------------------------------------------')
 map_1 = Map(100,100)
-map_1.Initialize(-100,100)
 map_1.Print()
 print('------------------------------------------')
 Loop=True
@@ -70,12 +69,40 @@ while Loop==True:
     request = str(input("$:"))
     if(request=="exit"):
         Loop=False
-    if(request=="return -data=index"):
+    
+    elif("setDataFrame" in request):
+        
+        if("-dict" in request[12:]):
+            request=str(input("orient ? (yes/no) ->"))
+            map_1.Generate_Table_From_Dict(self,request)
+            
+        elif("-numpy" in request[12:]):
+            Size=[]
+            request=int(input("Minimum Number ... ->"))
+            Size.append(request)
+            request=int(input("Maximum Number ... ->"))
+            Size.append(request)
+            map_1.Generate_Table_From_Numpy(Size[0],Size[1])
+            
+        elif("-file" in request[12:]):
+            if("csv" in request[17:]):
+                request=str(input("name of file ... ->"))
+                map_1.Generate_Table_From_File()
+            elif("txt" in request[17:]):
+                Data=[]
+                request=str(input("name of file ... ->"))
+                Data.append(request)
+                request=str(input("delimiter ... ->"))
+                Data.append(request)
+                map_1.Generate_Table_From_File(Data[0],Data[1])
+                
+                
+    elif(request=="return -data=index"):
         print(map_1.Return_Data_Index_columns())
     
-    if("return -data -col=" in request) :
+    elif("return -data -col=" in request) :
         print(map_1.Return_Data_columns(request[18:]))
     
-    if("return -data -row=" in request) :
+    elif("return -data -row=" in request) :
         print(request[18:])
         print(Return_Data_Row(request[18:]))
