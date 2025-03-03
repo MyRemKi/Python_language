@@ -6,16 +6,16 @@ import random as rand
 class Map:
     
     def __init__(self,x,y):
-        self.x = x
-        self.y = y
+        self.size_x = x
+        self.size_y = y
         self.np = 0
         self.pd = 0
         
     def Generate_Table_From_Numpy(self,randx,randy) :
-        self.np = np.random.randint(randx,randy, size=(self.x,self.y))
+        self.np = np.random.randint(randx,randy, size=(self.size_x,self.size_y))
         columns_list = []
         
-        for i in range (self.y):
+        for i in range (self.size_y):
             columns_list.append(str(i))
         
         self.pd = pd.DataFrame(self.np,columns=columns_list)
@@ -23,12 +23,16 @@ class Map:
     def Generate_Table_From_Dict(self,orient):
         random_dict = {rand.randint(1, 100): rand.randint(-100, 100) for _ in range(100)}
         if(orient=="yes"):
-            self.pd = pd.DataFrame(random_dict,orient='index')
-        
-         else:
+            self.pd = pd.DataFrame.from_dict(random_dict,orient='index')
+        else:
             self.pd = pd.DataFrame(random_dict)
     
-    def Generate_Table_From_
+    def Generate_Table_From_File(self,name,chardelimiter=0):
+        if(chardelimiter!=0):
+            self.pd = pd.DataFrame.read_csv(name, delimiter=chardelimiter)
+        else:
+            self.pd = pd.DataFrame.read_csv(name)
+        
     
     def Print(self):
         print(self.pd)
