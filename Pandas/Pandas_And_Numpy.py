@@ -21,7 +21,14 @@ class Map:
         self.pd = pd.DataFrame(self.np,columns=columns_list)
     
     def Generate_Table_From_Dict(self,orient):
-        random_dict = {rand.randint(1, 100): rand.randint(-100, 100) for _ in range(100)}
+        random_list = []
+        random_dict = {}
+        
+        for i in range (100):
+            for j in range(100):
+                random_list.append(rand.randint(1,100))
+            random_dict[i]=[random_list]
+        
         if(orient=="yes"):
             self.pd = pd.DataFrame.from_dict(random_dict,orient='index')
         else:
@@ -74,7 +81,7 @@ while Loop==True:
         
         if("-dict" in request[12:]):
             request=str(input("orient ? (yes/no) ->"))
-            map_1.Generate_Table_From_Dict(self,request)
+            map_1.Generate_Table_From_Dict(request)
             
         elif("-numpy" in request[12:]):
             Size=[]
@@ -106,3 +113,6 @@ while Loop==True:
     elif("return -data -row=" in request) :
         print(request[18:])
         print(Return_Data_Row(request[18:]))
+        
+    elif("return -data -all"):
+        map_1.Print()
